@@ -45,11 +45,9 @@ public partial class StandardYggdrasil(YggdrasilData data, string address, int p
             var initiated = await InitializeConnection(stream, profile);
 
             if (login)
-            {
                 return initiated.IsSuccess
                     ? Result.Success()
                     : Result.Clone(initiated);
-            }
 
             return initiated.IsFailure
                 ? Result.Clone(initiated)
