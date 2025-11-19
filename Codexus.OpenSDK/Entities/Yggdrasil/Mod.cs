@@ -10,4 +10,17 @@ public class Mod
     [JsonPropertyName("iid")] public required string Iid { get; set; }
     [JsonPropertyName("md5")] public required string Md5 { get; set; }
     [JsonPropertyName("version")] public required string Version { get; set; } = "";
+
+    public Mod Clone()
+    {
+        return new Mod
+        {
+            ModPath = ModPath,
+            Name = Name,
+            Id = Id,
+            Iid = Iid,
+            Md5 = Md5,
+            Version = Version
+        };
+    }
 }

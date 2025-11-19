@@ -24,4 +24,13 @@ public class UserProfile
     {
         return Encoding.ASCII.GetBytes(UserToken).Xor(TokenKey);
     }
+    
+    public UserProfile Clone()
+    {
+        return new UserProfile
+        {
+            UserId = UserId,
+            UserToken = UserToken
+        };
+    }
 }

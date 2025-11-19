@@ -15,4 +15,17 @@ public class GameProfile
     {
         return JsonSerializer.Serialize(Mods);
     }
+
+    public GameProfile Clone()
+    {
+        return new GameProfile
+        {
+            GameId = GameId,
+            GameVersion = GameVersion,
+            BootstrapMd5 = BootstrapMd5,
+            DatFileMd5 = DatFileMd5,
+            Mods = Mods.Clone(),
+            User = User.Clone() 
+        };
+    }
 }
