@@ -62,7 +62,7 @@ public class ProtocolSupport(IModContext? modContext) : IRegistryApply
         StreamCodec.Composite(
             ByteBufCodecs.String, p => p.Name,
             ByteBufCodecs.String, p => p.Value,
-            ByteBufCodecs.String.OptionalRef(), p => p.Value,
+            ByteBufCodecs.String.OptionalRef(), p => p.Signature,
             (name, value, signature) => new Property(name, value, signature)
         ).List();
 
